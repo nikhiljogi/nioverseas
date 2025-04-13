@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities - NI Overseas Consultancy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes fadeInUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes slideIn { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+        @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+
+        /* Top Bar */
+        .top-bar { background-color: #1a1a1a; color: #fff; padding: 8px 0; font-size: 12px; }
+        .top-bar.animate-fade-in { animation: fadeIn 1s ease-in; }
+        .top-bar-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; transition: all 0.3s ease; }
+        .top-bar-content span { margin-right: 10px; }
+        .top-bar-content i { margin-right: 5px; color: #e63946; }
+        .top-bar-content a { color: #fff; text-decoration: none; transition: color 0.3s ease; }
+        .top-bar-content a:hover { color: #e63946; }
+        .social-icons a { margin-left: 8px; color: #fff; font-size: 16px; transition: color 0.3s ease, transform 0.3s ease; }
+        .social-icons a:hover { color: #e63946; transform: scale(1.2); }
+
+        /* Header */
+        header { background-color: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 100; transition: background-color 0.3s ease; }
+        header.animate-slide-down { animation: slideDown 0.8s ease-out; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
+        .logo { cursor: pointer; }
+        .logo img { height: 80px; width: auto; transition: transform 0.3s ease; }
+        .logo img:hover { transform: scale(1.05); }
+        .hamburger { display: none; font-size: 28px; cursor: pointer; color: #e63946; transition: transform 0.3s ease; }
+        .hamburger:hover { transform: rotate(90deg); }
+        .nav-links { display: flex; list-style: none; transition: all 0.3s ease; }
+        .nav-links li { margin-left: 25px; }
+        .nav-link { text-decoration: none; color: #333; font-weight: 500; text-transform: uppercase; padding: 8px 12px; transition: color 0.3s ease, transform 0.3s ease; position: relative; }
+        .nav-link:hover { color: #e63946; transform: translateY(-2px); }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: #e63946; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .apply-now { background-color: #e63946; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; text-transform: uppercase; transition: background-color 0.3s ease, transform 0.3s ease; }
+        .apply-now:hover { background-color: #b71c1c; transform: scale(1.05); }
+
+        /* Mobile Menu Styling */
+        .nav-links.active { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #fff; z-index: 99; padding-top: 60px; animation: slideIn 0.3s ease; }
+        .nav-links.active li { margin: 20px 0; }
+        .nav-links.active .nav-link { font-size: 18px; padding: 15px; display: block; }
+        body.no-scroll { overflow: hidden; }
+
+        /* Universities Section */
+        .universities {
+            padding: 50px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        .universities h2 {
+            font-size: 28px;
+            color: #e63946;
+            margin-bottom: 40px;
+            font-weight: 700;
+            animation: fadeIn 1s ease-in;
+        }
+        .universities p {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .university-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        .university-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+        .university-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .university-card h3 {
+            font-size: 20px;
+            color: #e63946;
+            margin-bottom: 15px;
+        }
+        .university-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .university-card a {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .university-card a:hover {
+            color: #b71c1c;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 50px 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 28px;
+            color: #e63946;
+            margin-bottom: 40px;
+            font-weight: 700;
+            animation: fadeIn 1s ease-in;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .service i {
+            font-size: 40px;
+            color: #e63946;
+            margin-bottom: 15px;
+        }
+        .service h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .service p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer { background-color: #1a1a1a; color: #fff; padding: 40px 0 20px; }
+        footer.animate-fade-in { animation: fadeIn 1s ease-in; }
+        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: 0 auto; padding: 0 20px; flex-wrap: wrap; gap: 30px; }
+        .footer-section { flex: 1; min-width: 200px; margin-bottom: 20px; }
+        .footer-section.about-us p a, .footer-section.contact p a { color: #e63946; text-decoration: underline; }
+        .footer-section.about-us p a:hover, .footer-section.contact p a:hover { color: #fff; }
+        .footer-section h3 { font-size: 18px; margin-bottom: 15px; color: #e63946; font-weight: 600; }
+        .footer-section p { font-size: 14px; color: #ccc; margin: 5px 0; line-height: 1.5; }
+        .footer-section a { color: #e63946; text-decoration: none; font-size: 14px; transition: color 0.3s ease; }
+        .footer-section a:hover { color: #fff; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .social-icons { margin-top: 15px; display: flex; gap: 10px; }
+        .social-icons a { color: #ccc; font-size: 18px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease; }
+        .social-icons a:hover { color: #e63946; transform: rotate(10deg) scale(1.2); }
+        .copyright { text-align: center; font-size: 12px; color: #ccc; padding-top: 20px; border-top: 1px solid #333; margin-top: 20px; width: 100%; }
+        .copyright a { color: #e63946; text-decoration: underline; }
+        .copyright a:hover { color: #fff; }
+
+        .whatsapp-button { position: fixed; bottom: 70px; left: 15px; background-color: #fff; padding: 12px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .whatsapp-button:hover { transform: scale(1.1); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); }
+        .whatsapp-button i { font-size: 28px; color: #25D366; }
+
+        .back-to-top { display: none; position: fixed; bottom: 80px; right: 15px; background-color: #e63946; color: #fff; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; z-index: 100; transition: background-color 0.3s ease; }
+        .back-to-top:hover { background-color: #b71c1c; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; }
+            .apply-now { display: none; }
+            .top-bar-content { flex-direction: column; text-align: center; gap: 10px; }
+            .universities h2, .services h2 { font-size: 24px; }
+            .university-grid, .services-grid { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .social-icons { justify-content: center; }
+            .footer-links li { display: inline-block; margin: 0 15px 10px 0; }
+        }
+
+        @media (max-width: 480px) {
+            .logo img { height: 60px; }
+            .universities h2, .services h2 { font-size: 20px; }
+            .university-card h3, .service h3 { font-size: 18px; }
+            .university-card p, .service p { font-size: 14px; }
+            .footer-section h3 { font-size: 16px; }
+            .footer-section p, .footer-section a { font-size: 12px; }
+            .social-icons a { font-size: 16px; }
+            .copyright { font-size: 10px; }
+            .footer-links li { margin: 0 10px 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar animate-fade-in">
+        <div class="container">
+            <div class="top-bar-content">
+                <span><i class="fas fa-phone"></i> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></span>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/NI-Overseas-Consultancy/61575064563827/?mibextid=ZbWKwL" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ni_overseas/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@NI_Overseas" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+<header class="animate-slide-down">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.png" alt="NI Overseas Logo">
+            </div>
+            <nav>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" class="nav-link" data-section="home">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link" data-section="about">About Us</a></li>
+                    <li><a href="university.html" class="nav-link">Universities</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="index.html#countries" class="nav-link" data-section="countries">Countries</a></li>
+                    <li><a href="index.html#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                    <li><a href="index.html#consultation" class="nav-link" data-section="consultation">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="applynow.html" class="apply-now">Apply Now</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Key Services</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>University Selection Assistance</h3>
+                    <p>Get expert guidance on choosing the best medical university based on your preferences and academic profile.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-passport"></i>
+                    <h3>Complete Admission Support</h3>
+                    <p>From application submission to securing an admission letter, we handle it all.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-plane"></i>
+                    <h3>Visa & Travel Assistance</h3>
+                    <p>Hassle-free visa application support and travel arrangements.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-home"></i>
+                    <h3>Accommodation & Campus Support</h3>
+                    <p>Helping students settle into university hostels and providing local assistance.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Scholarships & Financial Aid</h3>
+                    <p>Explore scholarship opportunities to make your education affordable.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Medical Insurance & Safety</h3>
+                    <p>Ensure a safe stay with proper medical coverage and university support.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-language"></i>
+                    <h3>Language Training Support</h3>
+                    <p>Access language training programs to help you adapt to the local culture and excel in your studies.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Post-Graduation Career Guidance</h3>
+                    <p>Receive support in finding internships, residencies, or job opportunities after completing your degree.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="animate-fade-in">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about-us">
+                    <h3>NI Overseas Consultancy</h3>
+                    <p>Your trusted partner for MBBS abroad. With over 5 years of experience, we guide students to top medical universities worldwide. Visit us at <a href="http://www.nioverseas.in" target="_blank">www.nioverseas.in</a>.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Useful Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="aboutus.html" class="nav-link">About Us</a></li>
+                        <li><a href="university.html" class="nav-link">Universities</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p><strong>Address:</strong> Plot No. 8, Sumit Nagar, Opposite Anjanadevi Sabhagruha, Near Hanuman Temple, Godhni Road, Zingabai Takli, Nagpur – 440030, Maharashtra, India</p>
+                    <p><strong>Phone:</strong> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/people/NI-Overseas-Consultancy/61575064563827/?mibextid=ZbWKwL" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ni_overseas/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@NI_Overseas" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© Copyright 2025 NI Overseas Consultancy. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+919075147715" class="whatsapp-button" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back-to-Top Button -->
+    <button class="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Scripts -->
+    <script>
+        // Hamburger Menu Toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+            const icon = document.querySelector('.hamburger i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Smooth Navigation Handling
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                
+                if (href.startsWith('#')) {
+                    const targetSection = document.querySelector(href);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        document.querySelector('.nav-links').classList.remove('active');
+                        document.body.classList.remove('no-scroll');
+                        const icon = document.querySelector('.hamburger i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                } else {
+                    document.body.style.opacity = '0';
+                    document.body.style.transition = 'opacity 0.3s ease';
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 300);
+                }
+            });
+        });
+
+        // Page Load Fade-in
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Back-to-Top Button Functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Logo Click Functionality
+        function showLogoInfo() {
+            alert('This is NI Overseas Consultancy Logo. Learn more about us on the About Us page!');
+            window.location.href = 'index.html#about';
+        }
+    </script>
+</body>
+</html>

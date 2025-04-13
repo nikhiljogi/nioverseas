@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study MBBS in Georgia 2025-26 - Top Study Destination</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            transition: opacity 0.3s ease;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* Top Bar Styles */
+        .top-bar { 
+            background-color: #1a1a1a; 
+            color: #fff; 
+            padding: 8px 0; 
+            font-size: 12px; 
+        }
+        .top-bar.animate-fade-in { 
+            animation: fadeIn 1s ease-in; 
+        }
+        .top-bar-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            transition: all 0.3s ease; 
+        }
+        .top-bar-content span { 
+            margin-right: 10px; 
+        }
+        .top-bar-content i { 
+            margin-right: 5px; 
+            color: #e63946; 
+        }
+        .top-bar-content a { 
+            color: #fff; 
+            text-decoration: none; 
+            transition: color 0.3s ease; 
+        }
+        .top-bar-content a:hover { 
+            color: #e63946; 
+        }
+        .social-icons a { 
+            margin-left: 8px; 
+            color: #fff; 
+            font-size: 16px; 
+            transition: color 0.3s ease, transform 0.3s ease; 
+        }
+        .social-icons a:hover { 
+            color: #e63946; 
+            transform: scale(1.2); 
+        }
+
+        /* Header Styles */
+        header { 
+            background-color: #fff; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            transition: background-color 0.3s ease; 
+        }
+        header.animate-slide-down { 
+            animation: slideDown 0.8s ease-out; 
+        }
+        .header-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 0; 
+        }
+        .logo { 
+            cursor: pointer; 
+        }
+        .logo img { 
+            height: 80px; 
+            width: auto; 
+            transition: transform 0.3s ease; 
+        }
+        .logo img:hover { 
+            transform: scale(1.05); 
+        }
+        .hamburger { 
+            display: none; 
+            font-size: 28px; 
+            cursor: pointer; 
+            color: #e63946; 
+            transition: transform 0.3s ease; 
+        }
+        .hamburger:hover { 
+            transform: rotate(90deg); 
+        }
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            transition: all 0.3s ease; 
+        }
+        .nav-links li { 
+            margin-left: 25px; 
+        }
+        .nav-link { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 500; 
+            text-transform: uppercase; 
+            padding: 8px 12px; 
+            transition: color 0.3s ease, transform 0.3s ease; 
+            position: relative; 
+        }
+        .nav-link:hover { 
+            color: #e63946; 
+            transform: translateY(-2px); 
+        }
+        .nav-link::after { 
+            content: ''; 
+            position: absolute; 
+            width: 0; 
+            height: 2px; 
+            bottom: -5px; 
+            left: 0; 
+            background-color: #e63946; 
+            transition: width 0.3s ease; 
+        }
+        .nav-link:hover::after { 
+            width: 100%; 
+        }
+        .apply-now { 
+            background-color: #e63946; 
+            color: #fff; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            text-transform: uppercase; 
+            transition: background-color 0.3s ease, transform 0.3s ease; 
+        }
+        .apply-now:hover { 
+            background-color: #b71c1c; 
+            transform: scale(1.05); 
+        }
+        .nav-links.active { 
+            display: flex; 
+            flex-direction: column; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100vh; 
+            background-color: #fff; 
+            z-index: 99; 
+            padding-top: 60px; 
+            animation: slideIn 0.3s ease; 
+        }
+        .nav-links.active li { 
+            margin: 20px 0; 
+        }
+        .nav-links.active .nav-link { 
+            font-size: 18px; 
+            padding: 15px; 
+            display: block; 
+        }
+        body.no-scroll { 
+            overflow: hidden; 
+        }
+
+        /* Main Content Styles */
+        .intro-section, .facts-section, .why-study-section, .budget-section, .universities-section, .consultation-section {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .animate-title {
+            font-size: clamp(20px, 3.5vw, 28px);
+            margin-bottom: 20px;
+            color: #e63946;
+            animation: fadeIn 1s ease-in;
+        }
+        .animate-text {
+            font-size: clamp(14px, 2vw, 16px);
+            margin-bottom: 10px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .facts-grid, .points-grid, .university-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(10px, 2vw, 20px);
+            margin-top: 20px;
+        }
+        .fact, .point, .university-card {
+            background: #f9f9f9;
+            padding: clamp(10px, 2vw, 15px);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            animation: slideUp 1s ease-in;
+            font-size: clamp(12px, 1.8vw, 14px);
+        }
+        .budget-list {
+            margin-top: 20px;
+        }
+        .budget-item {
+            margin-bottom: 10px;
+        }
+        .accordion-header {
+            width: 100%;
+            background: #e63946;
+            color: white;
+            padding: clamp(10px, 2vw, 15px);
+            border: none;
+            text-align: left;
+            font-size: clamp(14px, 2.2vw, 18px);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+        }
+        .accordion-header:hover {
+            background: #d62839;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #f9f9f9;
+            padding: 0 clamp(10px, 2vw, 15px);
+            border-radius: 0 0 5px 5px;
+        }
+        .accordion-content ul {
+            list-style: none;
+            padding: clamp(10px, 2vw, 15px) 0;
+        }
+        .accordion-content li {
+            margin-bottom: 10px;
+            font-size: clamp(12px, 1.8vw, 14px);
+        }
+
+        /* Footer Styles */
+        footer { 
+            background-color: #1a1a1a; 
+            color: #fff; 
+            padding: 40px 0 20px; 
+        }
+        footer.animate-fade-in { 
+            animation: fadeIn 1s ease-in; 
+        }
+        .footer-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+        }
+        .footer-section { 
+            flex: 1; 
+            min-width: 200px; 
+            margin-bottom: 20px; 
+        }
+        .footer-section.about-us p a, .footer-section.contact p a { 
+            color: #e63946; 
+            text-decoration: underline; 
+        }
+        .footer-section.about-us p a:hover, .footer-section.contact p a:hover { 
+            color: #fff; 
+        }
+        .footer-section h3 { 
+            font-size: 18px; 
+            margin-bottom: 15px; 
+            color: #e63946; 
+            font-weight: 600; 
+        }
+        .footer-section p { 
+            font-size: 14px; 
+            color: #ccc; 
+            margin: 5px 0; 
+            line-height: 1.5; 
+        }
+        .footer-section a { 
+            color: #e63946; 
+            text-decoration: none; 
+            font-size: 14px; 
+            transition: color 0.3s ease; 
+        }
+        .footer-section a:hover { 
+            color: #fff; 
+        }
+        .footer-links { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .footer-links li { 
+            margin-bottom: 10px; 
+        }
+        .social-icons { 
+            margin-top: 15px; 
+            display: flex; 
+            gap: 10px; 
+        }
+        .social-icons a { 
+            color: #ccc; 
+            font-size: 18px; 
+            text-decoration: none; 
+            transition: color 0.3s ease, transform 0.3s ease; 
+        }
+        .social-icons a:hover { 
+            color: #e63946; 
+            transform: rotate(10deg) scale(1.2); 
+        }
+        .copyright { 
+            text-align: center; 
+            font-size: 12px; 
+            color: #ccc; 
+            padding-top: 20px; 
+            border-top: 1px solid #333; 
+            margin-top: 20px; 
+            width: 100%; 
+        }
+        .copyright a { 
+            color: #e63946; 
+            text-decoration: underline; 
+        }
+        .copyright a:hover { 
+            color: #fff; 
+        }
+
+        /* Additional Elements */
+        .whatsapp-button { 
+            position: fixed; 
+            bottom: 70px; 
+            left: 15px; 
+            background-color: #fff; 
+            padding: 12px; 
+            border-radius: 50%; 
+            box-shadow: 0 W4px 10px rgba(0, 0, 0, 0.2); 
+            text-decoration: none; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .whatsapp-button:hover { 
+            transform: scale(1.1); 
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+        }
+        .whatsapp-button i { 
+            font-size: 28px; 
+            color: #25D366; 
+        }
+        .back-to-top { 
+            display: none; 
+            position: fixed; 
+            bottom: 80px; 
+            right: 15px; 
+            background-color: #e63946; 
+            color: #fff; 
+            border: none; 
+            border-radius: 50%; 
+            width: 50px; 
+            height: 50px; 
+            font-size: 20px; 
+            cursor: pointer; 
+            z-index: 100; 
+            transition: background-color 0.3s ease; 
+        }
+        .back-to-top:hover { 
+            background-color: #b71c1c; 
+        }
+
+        /* Consultation Form Styles */
+        .consultation-form {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .consultation-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        .consultation-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .consultation-form input:focus {
+            border-color: #e63946;
+            outline: none;
+        }
+        .consultation-form button {
+            background: #e63946;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .consultation-form button:hover {
+            background: #d62839;
+            transform: scale(1.05);
+        }
+        .error-message {
+            color: #d62839;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideIn { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; }
+            .apply-now { display: none; }
+            .top-bar-content { flex-direction: column; text-align: center; gap: 10px; }
+            .facts-grid, .points-grid, .university-grid { grid-template-columns: 1fr; }
+            .animate-title { font-size: 24px; }
+            .animate-text, .fact, .point, .university-card, .accordion-content li { font-size: 13px; }
+            .accordion-header { font-size: 15px; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .social-icons { justify-content: center; }
+            .footer-links li { display: inline-block; margin: 0 15px 10px 0; }
+            .consultation-form { padding: 20px; }
+        }
+        @media (max-width: 480px) {
+            .logo img { height: 60px; }
+            .animate-title { font-size: 20px; }
+            .animate-text, .fact, .point, .university-card, .accordion-content li { font-size: 12px; }
+            .accordion-header { font-size: 14px; }
+            .footer-section h3 { font-size: 16px; }
+            .footer-section p, .footer-section a { font-size: 12px; }
+            .social-icons a { font-size: 16px; }
+            .copyright { font-size: 10px; }
+            .footer-links li { margin: 0 10px 10px 0; }
+            .consultation-form input { font-size: 14px; padding: 10px; }
+            .consultation-form button { font-size: 14px; padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar animate-fade-in">
+        <div class="container">
+            <div class="top-bar-content">
+                <span><i class="fas fa-phone"></i> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></span>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/NI-Overseas-Consultancy/61575064563827/?mibextid=ZbWKwL" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ni_overseas/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@NI_Overseas" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="animate-slide-down">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.png" alt="NI Overseas Logo">
+                </div>
+                <nav>
+                    <div class="hamburger"><i class="fas fa-bars"></i></div>
+                    <ul class="nav-links">
+                        <li><a href="index.html#home" class="nav-link" data-section="home">Home</a></li>
+                        <li><a href="index.html#about" class="nav-link" data-section="about">About Us</a></li>
+                        <li><a href="university.html" class="nav-link">Universities</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="index.html#countries" class="nav-link" data-section="countries">Countries</a></li>
+                        <li><a href="index.html#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                        <li><a href="index.html#consultation" class="nav-link" data-section="consultation">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <a href="#consultation-section" class="apply-now" id="applyNow">Apply Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="animate-title">MBBS in Georgia – Europe’s Affordable Medical Education Destination</h2>
+            <p class="animate-text">Georgia is one of the fastest-growing destinations for Indian students pursuing MBBS abroad. Known for its high-quality education, modern infrastructure, English-medium programs, and globally recognized degrees, Georgia is a gateway to European medical education at an affordable cost.</p>
+            <p class="animate-text">With a safe environment, multicultural campuses, and modern teaching methods, Georgia’s medical universities provide the perfect atmosphere for international students to thrive.</p>
+        </div>
+    </section>
+
+    <!-- Quick Facts Section -->
+    <section class="facts-section">
+        <div class="container">
+            <h2 class="animate-title">Quick Facts About Georgia</h2>
+            <div class="facts-grid">
+                <div class="fact animate-card"><strong>Capital:</strong> Tbilisi</div>
+                <div class="fact animate-card"><strong>Official Language:</strong> Georgian</div>
+                <div class="fact animate-card"><strong>English Speaking Population:</strong> 40–50%</div>
+                <div class="fact animate-card"><strong>Currency:</strong> Georgian Lari (GEL)</div>
+                <div class="fact animate-card"><strong>Population:</strong> 37.2 lakhs (approx. 2023)</div>
+                <div class="fact animate-card"><strong>Time Difference:</strong> 1.5 hours behind India</div>
+                <div class="fact animate-card"><strong>Climate:</strong> Moderate – warm summers, cool winters</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Study Section -->
+    <section class="why-study-section">
+        <div class="container">
+            <h2 class="animate-title">Why Study MBBS in Georgia for Indian Students in 2025-26?</h2>
+            <div class="points-grid">
+                <div class="point animate-point"><strong>Globally Recognized Degrees:</strong> NMC, WDOMS, ECFMG, FAIMER approved</div>
+                <div class="point animate-point"><strong>Affordable Tuition Fees:</strong> INR 25–40 lakhs for the complete course</div>
+                <div class="point animate-point"><strong>English-Medium Programs:</strong> No language barrier for Indian students</div>
+                <div class="point animate-point"><strong>Direct Admission:</strong> No donation or entrance exam (NEET qualification required)</div>
+                <div class="point animate-point"><strong>Modern Infrastructure:</strong> Smart classrooms, clinical labs, simulation centers</div>
+                <div class="point animate-point"><strong>International Exposure:</strong> European standards of education with multicultural diversity</div>
+                <div class="point animate-point"><strong>Career Options:</strong> Eligibility for FMGE/NEXT, USMLE, PLAB, and other licensing exams</div>
+                <div class="point animate-point"><strong>Indian Student Community:</strong> Presence of Indian mess and cultural events</div>
+                <div class="point animate-point"><strong>Safety:</strong> Ranked among the safest countries in Europe for students</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Section -->
+    <section class="budget-section">
+        <div class="container">
+            <h2 class="animate-title">Best Affordable MBBS Universities in Georgia</h2>
+            <p class="animate-text"><strong>Note:</strong> Tuition fees are approximate and may vary depending on university policy, exchange rate fluctuations, and academic year changes.</p>
+            <div class="budget-list">
+                <div class="budget-item animate-card">
+                    <button class="accordion-header"><h3>BUDGET UNDER 30 LAKHS</h3><span class="accordion-icon">+</span></button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>European University (EU)</li>
+                            <li>Georgian National University (SEU)</li>
+                            <li>Batumi Shota Rustaveli State University (BSU)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="budget-item animate-card">
+                    <button class="accordion-header"><h3>BUDGET UNDER 35 LAKHS</h3><span class="accordion-icon">+</span></button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>University of Georgia (UG)</li>
+                            <li>Ivane Javakhishvili Tbilisi State University (TSU)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="budget-item animate-card">
+                    <button class="accordion-header"><h3>BUDGET UNDER 40 LAKHS</h3><span class="accordion-icon">+</span></button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Tbilisi State Medical University (TSMU)</li>
+                            <li>David Tvildiani Medical University (DTMU)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Universities Section -->
+    <section class="universities-section">
+        <div class="container">
+            <h2 class="animate-title">Top Medical Universities in Georgia</h2>
+            <div class="university-grid">
+                <div class="university-card animate-card">
+                    <h3>Tbilisi State Medical University (TSMU)</h3>
+                    <p><strong>Location:</strong> Tbilisi</p>
+                    <p><strong>Medium:</strong> English</p>
+                    <p><strong>Recognition:</strong> NMC, WDOMS, ECFMG, FAIMER</p>
+                </div>
+                <div class="university-card animate-card">
+                    <h3>Batumi Shota Rustaveli State University (BSU)</h3>
+                    <p><strong>Location:</strong> Batumi</p>
+                    <p><strong>Medium:</strong> English</p>
+                    <p><strong>Recognition:</strong> NMC, WDOMS, ECFMG, FAIMER</p>
+                </div>
+                <div class="university-card animate-card">
+                    <h3>David Tvildiani Medical University (DTMU)</h3>
+                    <p><strong>Location:</strong> Tbilisi</p>
+                    <p><strong>Medium:</strong> English</p>
+                    <p><strong>Recognition:</strong> NMC, WDOMS, ECFMG, FAIMER</p>
+                </div>
+                <div class="university-card animate-card">
+                    <h3>University of Georgia (UG)</h3>
+                    <p><strong>Location:</strong> Tbilisi</p>
+                    <p><strong>Medium:</strong> English</p>
+                    <p><strong>Recognition:</strong> NMC, WDOMS, ECFMG, FAIMER</p>
+                </div>
+                <div class="university-card animate-card">
+                    <h3>Ivane Javakhishvili Tbilisi State University (TSU)</h3>
+                    <p><strong>Location:</strong> Tbilisi</p>
+                    <p><strong>Medium:</strong> English</p>
+                    <p><strong>Recognition:</strong> NMC, WDOMS, ECFMG, FAIMER</p>
+                </div>
+                <div class="university-card animate-card">
+                    <h3>Georgian National University (SEU)</h3>
+                    <p><strong>Location:</strong> Tbilisi</p>
+                    <p><strong>Medium:</strong> English</p>
+                    <p><strong>Recognition:</strong> NMC, WDOMS, ECFMG, FAIMER</p>
+                </div>
+                <div class="university-card animate-card">
+                    <h3>European University (EU)</h3>
+                    <p><strong>Location:</strong> Tbilisi</p>
+                    <p><strong>Medium:</strong> English</p>
+                    <p><strong>Recognition:</strong> NMC, WDOMS, ECFMG, FAIMER</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section id="consultation-section" class="consultation-section">
+        <div class="container" id="consultation-content">
+            <h2 class="animate-title">Get Free Consultation</h2>
+            <p class="animate-text">Contact us today for personalized guidance on studying MBBS in Georgia. Fill out the form below, and our experts will get back to you!</p>
+            <div class="consultation-form">
+                <form id="consultationForm" action="https://formspree.io/f/mrbpjqbe" method="POST">
+                    <label for="consultName">Name:</label>
+                    <input type="text" id="consultName" name="consultName" required placeholder="Your Name">
+                    <label for="consultEmail">Email:</label>
+                    <input type="email" id="consultEmail" name="consultEmail" required placeholder="Your Email">
+                    <label for="consultMobile">Phone Number:</label>
+                    <input type="tel" id="consultMobile" name="consultMobile" pattern="[0-9+\-\(\)\s]{10,15}" required placeholder="Your Phone Number">
+                    <!-- Hidden Fields -->
+                    <input type="hidden" name="_subject" value="New Consultation Request - Georgia">
+                    <input type="text" name="_gotcha" style="display: none;">
+                    <button type="submit" id="submit-btn">Submit</button>
+                </form>
+                <p id="error-message" class="error-message">There was an error submitting your form. Please try again.</p>
+            </div>
+        </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="animate-fade-in">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section about-us">
+                <h3>NI Overseas Consultancy</h3>
+                <p>Your trusted partner for MBBS abroad. With over 5 years of experience, we guide students to top medical universities worldwide. Visit us at <a href="http://www.nioverseas.in" target="_blank">www.nioverseas.in</a>.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Useful Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="aboutus.html" class="nav-link">About Us</a></li>
+                    <li><a href="university.html" class="nav-link">Universities</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p><strong>Address:</strong> Plot No. 8, Sumit Nagar, Opposite Anjanadevi Sabhagruha, Near Hanuman Temple, Godhni Road, Zingabai Takli, Nagpur – 440030, Maharashtra, India</p>
+                <p><strong>Phone:</strong> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></p>
+                <p><strong>Email:</strong> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/NI-Overseas-Consultancy/61575064563827/?mibextid=ZbWKwL" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ni_overseas/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@NI_Overseas" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© Copyright 2025 NI Overseas Consultancy. All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+919075147715" class="whatsapp-button" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back-to-Top Button -->
+    <button class="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Scripts -->
+    <script>
+        // Hamburger Menu Toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+            const icon = document.querySelector('.hamburger i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Smooth Navigation Handling
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) {
+                    const targetSection = document.querySelector(href);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        document.querySelector('.nav-links').classList.remove('active');
+                        document.body.classList.remove('no-scroll');
+                        const icon = document.querySelector('.hamburger i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                } else {
+                    document.body.style.opacity = '0';
+                    document.body.style.transition = 'opacity 0.3s ease';
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 300);
+                }
+            });
+        });
+
+        // Smooth Scroll to Consultation Section
+        const applyBtn = document.getElementById('applyNow');
+        applyBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const consultationSection = document.getElementById('consultation-section');
+            consultationSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Page Load Fade-in
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+
+            // Consultation Form Submission
+            const consultationForm = document.getElementById('consultationForm');
+            if (consultationForm) {
+                consultationForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const form = e.target;
+                    const consultationContent = document.getElementById('consultation-content');
+                    const errorMessage = document.getElementById('error-message');
+                    const submitButton = document.getElementById('submit-btn');
+
+                    // Disable submit button to prevent multiple submissions
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                    errorMessage.style.display = 'none';
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            // Replace the content with a confirmation message
+                            consultationContent.innerHTML = `
+                                <h1>Thank You for Reaching Out!</h1>
+                                <p>Your consultation request has been submitted successfully.</p>
+                                <p>We have sent a confirmation email to the provided address.</p>
+                                <p>Our team will contact you soon to discuss your MBBS abroad options in Georgia. For immediate assistance, reach out to us:</p>
+                                <p><strong>Phone:</strong> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></p>
+                                <p><strong>Email:</strong> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></p>
+                                <p><strong>WhatsApp:</strong> <a href="https://wa.me/+919075147715">Chat with us</a></p>
+                            `;
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        errorMessage.style.display = 'block';
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit';
+                    }
+                });
+            }
+        });
+
+        // Back-to-Top Button Functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Accordion Functionality
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.accordion-icon');
+                const isOpen = content.style.maxHeight;
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    if (item !== content) {
+                        item.style.maxHeight = null;
+                        item.previousElementSibling.querySelector('.accordion-icon').textContent = '+';
+                    }
+                });
+                if (isOpen) {
+                    content.style.maxHeight = null;
+                    icon.textContent = '+';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.textContent = '−';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

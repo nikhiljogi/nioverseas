@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NI Overseas - Study MBBS Abroad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Global Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes fadeInUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes slideIn { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+        @keyframes popupFadeIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 8px 0;
+            font-size: 12px;
+        }
+        .top-bar.animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .top-bar-content span {
+            margin: 5px 10px;
+        }
+        .top-bar-content i {
+            margin-right: 5px;
+            color: #e63946;
+        }
+        .top-bar-content a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .top-bar-content a:hover {
+            color: #e63946;
+        }
+        .social-icons a {
+            margin: 0 8px;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #e63946;
+            transform: scale(1.2);
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header.animate-slide-down {
+            animation: slideDown 0.8s ease-out;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .logo img {
+            height: 80px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #e63946;
+            transition: transform 0.3s ease;
+        }
+        .hamburger:hover {
+            transform: rotate(90deg);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 25px;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+        .nav-link:hover {
+            color: #e63946;
+            transform: translateY(-2px);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #e63946;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .apply-now {
+            background-color: #e63946;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .apply-now:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }
+
+        /* Mobile Menu */
+        .nav-links.active {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            z-index: 99;
+            padding-top: 60px;
+            animation: slideIn 0.3s ease;
+        }
+        .nav-links.active li {
+            margin: 20px 0;
+        }
+        .nav-links.active .nav-link {
+            font-size: 18px;
+            padding: 15px;
+            display: block;
+        }
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        /* Mobile Bottom Navigation */
+        .mobile-bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            padding: 5px 0;
+        }
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+        .nav-item i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .nav-item span {
+            display: block;
+        }
+        .nav-item:hover,
+        .nav-item:active {
+            color: #e63946;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+        }
+        .hero-content.animate-fade-in-up {
+            animation: fadeInUp 1s ease forwards;
+        }
+        .hero .subtitle {
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .hero .btn {
+            background-color: #e63946;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .hero .btn:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #fff;
+        }
+        .about h2 {
+            font-size: 28px;
+            color: #e63946;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .about h2.animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        .about p {
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #666;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card.animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .card.animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card .counter {
+            font-size: 1.5rem;
+            color: #e63946;
+            font-weight: bold;
+        }
+        .vision-mission {
+            margin-top: 40px;
+        }
+        .vision-mission h3 {
+            font-size: 24px;
+            color: #e63946;
+            margin-bottom: 20px;
+        }
+        .vision-mission p {
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: #666;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 50px 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 28px;
+            color: #e63946;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        .services h2.animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service.animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .service.animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .service i {
+            font-size: 40px;
+            color: #e63946;
+            margin-bottom: 15px;
+        }
+        .service h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 16px;
+            color: #666;
+        }
+        .service h4 {
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 50px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        .gallery h2 {
+            font-size: 28px;
+            color: #e63946;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        .gallery h2.animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        .gallery h3 {
+            font-size: 24px;
+            color: #e63946;
+            margin-bottom: 20px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-grid img.animate-on-scroll {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .gallery-grid img.animate-on-scroll.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .video-section h3 {
+            font-size: 24px;
+            color: #e63946;
+            margin: 40px 0 20px;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .video-grid iframe,
+        .video-grid video {
+            width: 100%;
+            height: 180px;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .video-grid iframe.animate-on-scroll,
+        .video-grid video.animate-on-scroll {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .video-grid iframe.animate-on-scroll.visible,
+        .video-grid video.animate-on-scroll.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .video-grid video:hover,
+        .video-grid iframe:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .load-more {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .load-more:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            position: relative;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .modal-content video,
+        .modal-content iframe {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+        }
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .close-modal:hover {
+            transform: scale(1.2);
+        }
+
+        /* Countries Section */
+        .countries {
+            padding: 50px 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .countries h2 {
+            font-size: 28px;
+            color: #e63946;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        .countries h2.animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .country {
+            position: relative;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .country::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .country span {
+            position: relative;
+            z-index: 2;
+        }
+        .country.animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .country.animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .country:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Consultation Section */
+        .consultation {
+            padding: 50px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        .consultation h2 {
+            font-size: 28px;
+            color: #e63946;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .consultation p {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .consultation-form {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.5s ease;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus {
+            border-color: #e63946;
+            outline: none;
+        }
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }
+        .error-message {
+            color: #b71c1c;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 40px 0 20px;
+        }
+        footer.animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #e63946;
+            font-weight: 600;
+        }
+        .footer-section p {
+            font-size: 14px;
+            color: #ccc;
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+        .footer-section a {
+            color: #e63946;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        .footer-section a:hover {
+            color: #fff;
+        }
+        .footer-section.about-us p a,
+        .footer-section.contact p a {
+            text-decoration: underline;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .social-icons a {
+            color: #ccc;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #e63946;
+            transform: rotate(10deg) scale(1.2);
+        }
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: #ccc;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .copyright a {
+            color: #e63946;
+            text-decoration: underline;
+        }
+        .copyright a:hover {
+            color: #fff;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 70px;
+            left: 15px;
+            background-color: #fff;
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .whatsapp-button i {
+            font-size: 28px;
+            color: #25D366;
+        }
+
+        /* Back-to-Top Button */
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 15px;
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 100;
+            transition: background-color 0.3s ease;
+        }
+        .back-to-top:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Popup Modal */
+        .popup-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: popupFadeIn 0.5s ease;
+        }
+        .popup-content h2 {
+            font-size: 24px;
+            color: #e63946;
+            margin-bottom: 10px;
+        }
+        .popup-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .popup-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .popup-content input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+        }
+        .popup-content input:focus {
+            border-color: #e63946;
+            outline: none;
+        }
+        .popup-submit {
+            background-color: #e63946;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .popup-submit:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }
+        .popup-close {
+            margin-top: 15px;
+            background: none;
+            border: none;
+            color: #e63946;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .popup-error {
+            color: #b71c1c;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+            }
+            .apply-now {
+                display: none;
+            }
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            .top-bar-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 24px;
+            }
+            .hero .subtitle {
+                font-size: 14px;
+            }
+            .hero .btn {
+                padding: 10px 20px;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            .service.animate-on-scroll {
+                transform: translateY(20px);
+            }
+            .gallery-grid img.animate-on-scroll {
+                transform: scale(0.95);
+            }
+            /* Footer Specific Styles */
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-section {
+                margin: 20px 0;
+                min-width: unset;
+                width: 100%;
+                max-width: 400px;
+            }
+            .footer-section.contact {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-section.contact p {
+                max-width: 300px;
+                margin: 8px auto;
+            }
+            .social-icons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .footer-links li {
+                display: inline-block;
+                margin: 0 15px 10px 0;
+            }
+            .consultation h2 {
+                font-size: 24px;
+            }
+            .consultation-form {
+                padding: 20px;
+            }
+            .popup-content {
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 60px;
+            }
+            .hero {
+                min-height: 60vh;
+            }
+            .hero h1 {
+                font-size: 20px;
+            }
+            .hero .btn {
+                font-size: 14px;
+            }
+            .about h2,
+            .services h2,
+            .gallery h2,
+            .countries h2,
+            .consultation h2 {
+                font-size: 24px;
+            }
+            .gallery-grid img {
+                height: 100px;
+            }
+            .video-grid iframe,
+            .video-grid video {
+                height: 150px;
+            }
+            .nav-item {
+                font-size: 10px;
+            }
+            .nav-item i {
+                font-size: 18px;
+            }
+            .popup-content {
+                max-width: 300px;
+            }
+            .popup-content h2 {
+                font-size: 20px;
+            }
+            .popup-content p {
+                font-size: 14px;
+            }
+            .footer-section h3 {
+                font-size: 16px;
+            }
+            .footer-section p,
+            .footer-section a {
+                font-size: 12px;
+            }
+            .social-icons a {
+                font-size: 16px;
+            }
+            .copyright {
+                font-size: 10px;
+            }
+            .footer-links li {
+                margin: 0 10px 10px 0;
+            }
+            .consultation h2 {
+                font-size: 20px;
+            }
+            .consultation p {
+                font-size: 14px;
+            }
+            .form-group input {
+                font-size: 14px;
+                padding: 10px;
+            }
+            .cta-button {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar animate-fade-in">
+        <div class="container">
+            <div class="top-bar-content">
+                <span><i class="fas fa-phone"></i> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></span>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/NI-Overseas-Consultancy/61575064563827/?mibextid=ZbWKwL" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ni_overseas/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@NI_Overseas" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="animate-slide-down">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.png" alt="NI Overseas Logo">
+                </div>
+                <nav>
+                    <div class="hamburger"><i class="fas fa-bars"></i></div>
+                    <ul class="nav-links">
+                        <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+                        <li><a href="aboutus.html" class="nav-link" data-section="about">About Us</a></li>
+                        <li><a href="university.html" class="nav-link">Universities</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="countries.html" class="nav-link" data-section="countries">Countries</a></li>
+                        <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                        <li><a href="contactus.html" class="nav-link" data-section="consultation">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <a href="applynow.html" class="apply-now">Apply Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="slideshow">
+            <div class="slide active" style="background-image: url('hero-bg1.jpg');"></div>
+            <div class="slide" style="background-image: url('hero-bg2.jpg');"></div>
+            <div class="slide" style="background-image: url('hero-bg3.jpg');"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content animate-fade-in-up">
+                <p class="subtitle">Your Trusted Partner for MBBS Abroad</p>
+                <h1>Pursue your dream to be doctor with the best international govt medical University</h1>
+                <a href="contactus.html" class="btn">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="animate-fade-in">About NI Overseas Consultancy</h2>
+            <p>At NI Overseas Consultancy, we specialize in helping aspiring doctors fulfill their dreams of studying MBBS abroad. With over five years of experience, we provide comprehensive guidance and support to students seeking medical education at top international universities in Russia, Kazakhstan, Uzbekistan, and other leading destinations. Our team is uniquely equipped to assist students, as many of our employees have lived and studied in Russia themselves. Having experienced student life firsthand, they are now pursuing their own medical careers there. This dual perspective—as former students and current mentors—sets us apart from other consultancies. We understand the challenges students may face during their academic journey and offer practical solutions to ensure their success.</p>
+            <p>Our hands-on experience and dedication to simplifying university life make us a reliable partner for students and a trustworthy choice for parents. We take pride in being both a faithful guide and a promising company, committed to supporting students and earning the confidence of families who entrust us with their children’s futures.</p>
+            <div class="stats">
+                <div class="card-container">
+                    <div class="card animate-on-scroll">
+                        <h3>Years of Excellence</h3>
+                        <p class="counter" data-target="5">0+</p>
+                    </div>
+                    <div class="card animate-on-scroll">
+                        <h3>Students Placed</h3>
+                        <p class="counter" data-target="6000">0+</p>
+                    </div>
+                    <div class="card animate-on-scroll">
+                        <h3>Countries Covered</h3>
+                        <p class="counter" data-target="10">0+</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vision-mission">
+                <h3>Our Vision and Mission</h3>
+                <p>Our employees have lived in Russia as students and as of now, they're on their way to pursue the life of a doctor in Russia, so we have the experience of a student and guidance of a mentor, which gives us a great advantage over other consultants because we know the problems that a student may face during his academic years and the solutions to those problems as well. The experience and conviction we have to make university life easy for students as we are one, makes a reliable guardian for students as well as a faithful and promising company for parents with whom they can trust their children with.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="animate-fade-in">Our Key Services</h2>
+            <div class="services-grid">
+                <div class="service animate-on-scroll"><i class="fas fa-graduation-cap"></i><h3>University Selection Assistance</h3><p>Get expert guidance on choosing the best medical university based on your preferences and academic profile.</p></div>
+                <div class="service animate-on-scroll"><i class="fas fa-passport"></i><h3>Complete Admission Support</h3><p>From application submission to securing an admission letter, we handle it all.</p></div>
+                <div class="service animate-on-scroll"><i class="fas fa-plane"></i><h3>Visa & Travel Assistance</h3><p>Hassle-free visa application support and travel arrangements.</p></div>
+                <div class="service animate-on-scroll"><i class="fas fa-home"></i><h3>Accommodation & Campus Support</h3><p>Helping students settle into university hostels and providing local assistance.</p></div>
+                <div class="service animate-on-scroll"><i class="fas fa-money-bill-wave"></i><h3>Scholarships & Financial Aid</h3><p>Explore scholarship opportunities to make your education affordable.</p></div>
+                <div class="service animate-on-scroll"><i class="fas fa-user-shield"></i><h3>Medical Insurance & Safety</h3><p>Ensure a safe stay with proper medical coverage and university support.</p></div>
+                <div class="service animate-on-scroll"><i class="fas fa-language"></i><h3>Language Training Support</h3><p>Access language training programs to help you adapt to the local culture and excel in your studies.</p></div>
+                <div class="service animate-on-scroll"><i class="fas fa-briefcase"></i><h3>Post-Graduation Career Guidance</h3><p>Receive support in finding internships, residencies, or job opportunities after completing your degree.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="about">
+        <div class="container">
+            <h2 class="animate-fade-in">What Our Students Say</h2>
+            <div class="services-grid">
+                <div class="service animate-on-scroll">
+                    <p>"NI Overseas made my MBBS dream a reality! Their support in the admission process, visa, and travel arrangements was outstanding."</p>
+                    <h4>— Ishika Naybhankar, Kemerovo State Medical University</h4>
+                </div>
+                <div class="service animate-on-scroll">
+                    <p>"I couldn’t get admission in a government medical college in India, but NI Overseas guided me to study MBBS abroad with ease!"</p>
+                    <h4>— Rajat Patle, Ulyanovsk State Medical University</h4>
+                </div>
+                <div class="service animate-on-scroll">
+                    <p>"The consultancy provided excellent guidance, from university selection to post-arrival support. I feel safe and comfortable here."</p>
+                    <h4>— Saunak Santra, Alitai State Medical University</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parents Reviews Section -->
+    <section id="parents-reviews" class="about">
+        <div class="container">
+            <h2 class="animate-fade-in">Experiences of Parents with Us</h2>
+            <div class="services-grid">
+                <div class="service animate-on-scroll">
+                    <p>"They have helped our daughter in pursuing her dream of becoming a surgeon into a reality, and we're very thankful for their smooth and honest work."</p>
+                    <h4>— Mr. & Mrs. Naybhankar, Parents of Ishika</h4>
+                </div>
+                <div class="service animate-on-scroll">
+                    <p>"Our son, after losing all his hopes of becoming a doctor, is now studying in Russia and is happy and safe, all thanks to NI Overseas. We're forever grateful."</p>
+                    <h4>— Mr. & Mrs. Patle, Parents of Rajat</h4>
+                </div>
+                <div class="service animate-on-scroll">
+                    <p>"After consulting with many advisors, we connected with Dr. Umang. The clarity and confidence provided by NI Overseas were truly reassuring, helping us select the perfect university for our son and his friend."</p>
+                    <h4>— Mr. & Mrs. Santra, Parents of Saunak</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="animate-fade-in">Gallery</h2>
+            <h3>Images</h3>
+            <div class="gallery-grid">
+                <img src="counseeling.jpeg" alt="Counseling" class="animate-on-scroll">
+                <img src="airport travel.jpeg" alt="Airport travel" class="animate-on-scroll">
+                <img src="groupairport.jpeg" alt="Group photo" class="animate-on-scroll">
+                <img src="uniersity2.jpg" alt="Classroom" class="animate-on-scroll">
+                <img src="un.jpg" alt="Visa Processing" class="animate-on-scroll">
+                <img src="uniersity.jpg" alt="Hostel Life" class="animate-on-scroll">
+                <img src="IMG-20250406-WA0040.jpg" alt="Classroom" class="animate-on-scroll">
+                <img src="hero-bg4.jpg" alt="Classroom" class="animate-on-scroll">
+                <img src="rooms.jpg" alt="Classroom" class="animate-on-scroll">
+                <img src="event.jpeg" alt="Cultural Event" class="animate-on-scroll">
+                <img src="IMG-20250406-WA0021.jpg" alt="Cultural Event" class="animate-on-scroll">
+                <img src="IMG-20250406-WA0057.jpg" alt="Cultural Event" class="animate-on-scroll">
+            </div>
+            <section class="video-section">
+                <h3>Videos</h3>
+                <div class="video-grid">
+                    <iframe src="https://www.youtube.com/embed/5bM3TQKB-Gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="animate-on-scroll"></iframe>
+                    <video controls class="animate-on-scroll">
+                        <source src="studentfeedback.mp4" type="video/mp4">
+                    </video>
+                    <video controls class="animate-on-scroll">
+                        <source src="medical.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <a href="gallery.html"><button class="load-more">View More</button></a>
+            </section>
+        </div>
+        <!-- Modal for Image/Video -->
+        <div class="modal" id="mediaModal">
+            <span class="close-modal">×</span>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section id="countries" class="countries">
+        <div class="container">
+            <h2 class="animate-fade-in">Study Destinations</h2>
+            <div class="countries-grid">
+                <a href="russia.html" class="country animate-on-scroll" style="background-image: url('images/russia.png');"><span>Russia</span></a>
+                <a href="kazakhstan.html" class="country animate-on-scroll" style="background-image: url('images/kazakhstan.png');"><span>Kazakhstan</span></a>
+                <a href="uzbekistan.html" class="country animate-on-scroll" style="background-image: url('images/uzbekistan-bg.jpg');"><span>Uzbekistan</span></a>
+                <a href="georgia.html" class="country animate-on-scroll" style="background-image: url('images/georgia-bg.jpg');"><span>Georgia</span></a>
+                <a href="kyrgyzstan.html" class="country animate-on-scroll" style="background-image: url('images/kyrgyzstan-bg.jpg');"><span>Kyrgyzstan</span></a>
+                <a href="philippines.html" class="country animate-on-scroll" style="background-image: url('images/philippines-bg.jpg');"><span>Philippines</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section id="consultation" class="consultation">
+        <div class="container" id="consultation-content">
+            <h2>Get in Touch</h2>
+            <p>Fill out the form below to connect with our team and start your journey towards studying MBBS abroad!</p>
+            <div class="consultation-form">
+                <form id="consultationForm" action="https://formspree.io/f/myzeoerv" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required pattern="[0-9+\-\(\)\s]{10,15}">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <input type="hidden" name="_subject" value="New Consultation Request">
+                    <input type="text" name="_gotcha" style="display: none;">
+                    <button type="submit" class="cta-button" id="submit-btn">Submit</button>
+                </form>
+                <p id="error-message" class="error-message">There was an error submitting your form. Please try again.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="animate-fade-in">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about-us">
+                    <h3>NI Overseas Consultancy</h3>
+                    <p>Your trusted partner for MBBS abroad. With over 5 years of experience, we guide students to top medical universities worldwide. Visit us at <a href="http://www.nioverseas.in" target="_blank">www.nioverseas.in</a>.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Useful Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="aboutus.html" class="nav-link">About Us</a></li>
+                        <li><a href="university.html" class="nav-link">Universities</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p><strong>Address:</strong> Plot No. 8, Sumit Nagar, Opposite Anjanadevi Sabhagruha, Near Hanuman Temple, Godhni Road, Zingabai Takli, Nagpur – 440030, Maharashtra, India</p>
+                    <p><strong>Phone:</strong> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/people/NI-Overseas-Consultancy/61575064563827/?mibextid=ZbWKwL" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ni_overseas/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@NI_Overseas" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© Copyright 2025 NI Overseas Consultancy. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+919075147715" class="whatsapp-button" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="#home" class="nav-item"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="#about" class="nav-item"><i class="fas fa-info-circle"></i><span>About</span></a>
+        <a href="university.html" class="nav-item"><i class="fas fa-university"></i><span>Universities</span></a>
+        <a href="#consultation" class="nav-item"><i class="fas fa-phone"></i><span>Contact</span></a>
+    </nav>
+
+    <!-- Back-to-Top Button -->
+    <button class="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Popup Modal -->
+    <div id="contactPopup" class="popup-modal">
+        <div class="popup-content">
+            <h2>Let’s Get in Touch!</h2>
+            <p>Please provide your details for a personalized consultation.</p>
+            <form id="popupForm" action="https://formspree.io/f/mpwpbdnb" method="POST">
+                <input type="text" id="popupName" name="name" placeholder="Your Name" required>
+                <input type="email" id="popupEmail" name="email" placeholder="Your Email" required>
+                <input type="tel" id="popupMobile" name="phone" placeholder="Your Mobile Number" required pattern="[0-9+\-\(\)\s]{10,15}">
+                <input type="hidden" name="_subject" value="Popup Consultation Request">
+                <input type="text" name="_gotcha" style="display: none;">
+                <button type="submit" class="popup-submit">Submit</button>
+            </form>
+            <p id="popup-error" class="popup-error">There was an error submitting your form. Please try again.</p>
+            <button class="popup-close" onclick="closePopup()">Skip</button>
+        </div>
+    </div>
+
+    <script>
+        // Popup Functionality
+        function closePopup() {
+            const popup = document.getElementById('contactPopup');
+            if (popup) popup.style.display = 'none';
+        }
+
+        // DOMContentLoaded Event Listener
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cache frequently used elements
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const body = document.body;
+            const slides = document.querySelectorAll('.slide');
+            const galleryImages = document.querySelectorAll('.gallery-grid img');
+            const videoItems = document.querySelectorAll('.video-grid video, .video-grid iframe');
+            const backToTopButton = document.querySelector('.back-to-top');
+            const popup = document.getElementById('contactPopup');
+            const popupForm = document.getElementById('popupForm');
+            const consultationForm = document.getElementById('consultationForm');
+            const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+            const modal = document.getElementById('mediaModal');
+            const modalContent = document.getElementById('modalContent');
+            const closeModal = document.querySelector('.close-modal');
+
+            // Hamburger Menu Toggle
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    body.classList.toggle('no-scroll');
+                    const icon = hamburger.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+            }
+
+            // Smooth Navigation Handling
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        const targetSection = document.querySelector(href);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                            if (navLinks) {
+                                navLinks.classList.remove('active');
+                                body.classList.remove('no-scroll');
+                                const icon = hamburger?.querySelector('i');
+                                if (icon) {
+                                    icon.classList.add('fa-bars');
+                                    icon.classList.remove('fa-times');
+                                }
+                            }
+                        }
+                    } else {
+                        body.style.opacity = '0';
+                        body.style.transition = 'opacity 0.3s ease';
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 300);
+                    }
+                });
+            });
+
+            // Page Load Fade-in
+            body.style.opacity = '0';
+            body.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+                body.style.opacity = '1';
+            }, 100);
+
+            // Automatic Slideshow
+            let slideIndex = 0;
+            function showSlides() {
+                if (slides.length === 0) return;
+                slides.forEach(slide => slide.classList.remove('active'));
+                slideIndex = (slideIndex + 1) % slides.length;
+                slides[slideIndex].classList.add('active');
+                setTimeout(showSlides, 5000);
+            }
+            if (slides.length > 0) showSlides();
+
+            // Modal Functionality for Images
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    modalContent.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Modal Functionality for Videos and Iframes
+            videoItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (item.tagName === 'VIDEO') {
+                        modalContent.innerHTML = `<video src="${item.querySelector('source').src}" controls autoplay></video>`;
+                    } else if (item.tagName === 'IFRAME') {
+                        modalContent.innerHTML = `<iframe src="${item.src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    }
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close Modal
+            if (closeModal) {
+                closeModal.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    modalContent.innerHTML = '';
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            // Close Modal on Outside Click
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        modalContent.innerHTML = '';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+
+            // Popup Functionality
+            function showPopup() {
+                if (!popup) return;
+                if (!localStorage.getItem('popupShown')) {
+                    popup.style.display = 'flex';
+                    localStorage.setItem('popupShown', 'true');
+                }
+            }
+
+            if (popupForm) {
+                popupForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const form = e.target;
+                    const errorMessage = document.getElementById('popup-error');
+                    const submitButton = form.querySelector('.popup-submit');
+
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                    errorMessage.style.display = 'none';
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            closePopup();
+                            alert('Thank you! We will contact you soon.');
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        errorMessage.style.display = 'block';
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit';
+                    }
+                });
+            }
+
+            // Consultation Form Submission
+            if (consultationForm) {
+                consultationForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const form = e.target;
+                    const consultationContent = document.getElementById('consultation-content');
+                    const errorMessage = document.getElementById('error-message');
+                    const submitButton = document.getElementById('submit-btn');
+
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                    errorMessage.style.display = 'none';
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            consultationContent.innerHTML = `
+                                <h1>Thank You for Reaching Out!</h1>
+                                <p>Your consultation request has been submitted successfully.</p>
+                                <p>We have sent a confirmation email to the provided address.</p>
+                                <p>Our team will contact you soon to discuss your MBBS abroad options. For immediate assistance, reach out to us:</p>
+                                <p><strong>Phone:</strong> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></p>
+                                <p><strong>Email:</strong> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></p>
+                                <p><strong>WhatsApp:</strong> <a href="https://wa.me/+919075147715">Chat with us</a></p>
+                            `;
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        errorMessage.style.display = 'block';
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit';
+                    }
+                });
+            }
+
+            window.addEventListener('load', showPopup);
+
+            // Back-to-Top Button Functionality
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+                });
+                backToTopButton.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Scroll Animation Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        if (entry.target.querySelector('.counter')) {
+                            startCounter(entry.target.querySelector('.counter'));
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            animateOnScrollElements.forEach(element => observer.observe(element));
+
+            // Counter Animation Function
+            function startCounter(counter) {
+                const target = parseInt(counter.getAttribute('data-target')) || 0;
+                let count = 0;
+                const duration = 2000;
+                const steps = 100;
+                const increment = target / steps;
+                const interval = duration / steps;
+
+                const updateCounter = () => {
+                    if (count >= target) {
+                        counter.innerText = target.toLocaleString() + '+';
+                        return;
+                    }
+                    count += increment;
+                    counter.innerText = Math.min(Math.floor(count), target).toLocaleString() + '+';
+                    setTimeout(updateCounter, interval);
+                };
+
+                updateCounter();
+            }
+        });
+    </script>
+</body>
+</html>
