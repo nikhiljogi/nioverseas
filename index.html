@@ -603,9 +603,10 @@
             color: #e63946;
             margin-bottom: 40px;
             font-weight: 700;
+            opacity: 0;
         }
-        .countries h2.animate-fade-in {
-            animation: fadeIn 1s ease-in;
+        .countries h2.visible {
+            animation: fadeIn 0.8s ease-in forwards;
         }
         .countries-grid {
             display: grid;
@@ -614,23 +615,25 @@
             padding: 0 20px;
         }
         .country {
-            position: relative;
-            background-color: #fff;
+            background-color: #333;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             font-size: 18px;
             font-weight: 600;
             text-decoration: none;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: #fff;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 140px;
-            background-size: cover;
-            background-position: center;
+            height: 120px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .country::before {
             content: '';
@@ -640,7 +643,6 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
             z-index: 1;
         }
         .country span {
@@ -650,7 +652,7 @@
         .country.animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         .country.animate-on-scroll.visible {
             opacity: 1;
@@ -661,6 +663,16 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
+        /* Country-Specific Background Images */
+        .country-russia { background-image: url('images/russia.jpg'); }
+        .country-kazakhstan { background-image: url('images/kazakhstan.jpg'); }
+        .country-uzbekistan { background-image: url('images/uzbekistan.jpg'); }
+        .country-georgia { background-image: url('images/georgia.jpg'); }
+        .country-kyrgyzstan { background-image: url('images/kyrgyzstan.jpg'); }
+        .country-philippines { background-image: url('images/philippines.jpg'); }
+
+
+        
         /* Consultation Section */
         .consultation {
             padding: 50px 0;
@@ -1293,20 +1305,20 @@
         </div>
     </section>
 
-    <!-- Countries Section -->
-    <section id="countries" class="countries">
-        <div class="container">
-            <h2 class="animate-fade-in">Study Destinations</h2>
-            <div class="countries-grid">
-                <a href="russia.html" class="country animate-on-scroll" style="background-image: url('images/russia.jpg');"><span>Russia</span></a>
-                <a href="kazakhstan.html" class="country animate-on-scroll" style="background-image: url('images/kazakhstan.jpg');"><span>Kazakhstan</span></a>
-                <a href="uzbekistan.html" class="country animate-on-scroll" style="background-image: url('images/uzbekistan.jpg');"><span>Uzbekistan</span></a>
-                <a href="georgia.html" class="country animate-on-scroll" style="background-image: url('images/georgia.jpg');"><span>Georgia</span></a>
-                <a href="kyrgyzstan.html" class="country animate-on-scroll" style="background-image: url('images/kyrgyzstan.jpg');"><span>Kyrgyzstan</span></a>
-                <a href="philippines.html" class="country animate-on-scroll" style="background-image: url('images/philippines.jpg');"><span>Philippines</span></a>
-            </div>
+   <!-- Countries Section -->
+   <section id="countries" class="countries">
+    <div class="container">
+        <h2>Study Destinations</h2>
+        <div class="countries-grid">
+            <a href="russia.html" class="country country-russia animate-on-scroll"><span>Russia</span></a>
+            <a href="kazakhstan.html" class="country country-kazakhstan animate-on-scroll"><span>Kazakhstan</span></a>
+            <a href="uzbekistan.html" class="country country-uzbekistan animate-on-scroll"><span>Uzbekistan</span></a>
+            <a href="georgia.html" class="country country-georgia animate-on-scroll"><span>Georgia</span></a>
+            <a href="kyrgyzstan.html" class="country country-kyrgyzstan animate-on-scroll"><span>Kyrgyzstan</span></a>
+            <a href="philippines.html" class="country country-philippines animate-on-scroll"><span>Philippines</span></a>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Consultation Section -->
     <section id="consultation" class="consultation">
