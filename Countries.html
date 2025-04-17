@@ -273,6 +273,26 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
+        /* Country-Specific Background Images */
+        .country-russia {
+            background-image: url('images/russia.jpg');
+        }
+        .country-kazakhstan {
+            background-image: url('images/kazakhstan.jpg');
+        }
+        .country-uzbekistan {
+            background-image: url('images/uzbekistan.jpg');
+        }
+        .country-georgia {
+            background-image: url('images/georgia.jpg');
+        }
+        .country-kyrgyzstan {
+            background-image: url('images/kyrgyzstan.jpg');
+        }
+        .country-philippines {
+            background-image: url('images/philippines.jpg');
+        }
+
         /* Footer */
         footer {
             background-color: #1a1a1a;
@@ -482,10 +502,8 @@
     <div class="top-bar animate-fade-in">
         <div class="container">
             <div class="top-bar-content">
-                <div class="contact-info">
-                    <span><i class="fas fa-phone"></i> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></span>
-                    <span><i class="fas fa-envelope"></i> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></span>
-                </div>
+                <span><i class="fas fa-phone"></i> <a href="tel:+917410103463">+91 7410103463</a> | <a href="tel:+919075147715">+91 9075147715</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:nioverseas099@gmail.com">nioverseas099@gmail.com</a></span>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/people/NI-Overseas-Consultancy/61575064563827/?mibextid=ZbWKwL" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/ni_overseas/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -500,7 +518,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo" onclick="showLogoInfo()">
-                    <img src="logo.png" alt="NI Overseas Logo">
+                    <img src="images/logo.png" alt="NI Overseas Logo" onerror="this.src='https://via.placeholder.com/80x80?text=Logo';">
                 </div>
                 <nav>
                     <div class="hamburger"><i class="fas fa-bars"></i></div>
@@ -524,12 +542,12 @@
         <div class="container">
             <h2 class="animate-fade-in">Study Destinations</h2>
             <div class="countries-grid">
-                <a href="russia.html" class="country animate-on-scroll" style="background-image: url('images/russia.jpg');"><span>Russia</span></a>
-                <a href="kazakhstan.html" class="country animate-on-scroll" style="background-image: url('images/kazakhstan.jpg');"><span>Kazakhstan</span></a>
-                <a href="uzbekistan.html" class="country animate-on-scroll" style="background-image: url('images/uzbekistan.jpg');"><span>Uzbekistan</span></a>
-                <a href="georgia.html" class="country animate-on-scroll" style="background-image: url('images/georgia.jpg');"><span>Georgia</span></a>
-                <a href="kyrgyzstan.html" class="country animate-on-scroll" style="background-image: url('images/kyrgyzstan.jpg');"><span>Kyrgyzstan</span></a>
-                <a href="philippines.html" class="country animate-on-scroll" style="background-image: url('images/philippines.jpg');"><span>Philippines</span></a>
+                <a href="russia.html" class="country country-russia animate-on-scroll"><span>Russia</span></a>
+                <a href="kazakhstan.html" class="country country-kazakhstan animate-on-scroll"><span>Kazakhstan</span></a>
+                <a href="uzbekistan.html" class="country country-uzbekistan animate-on-scroll"><span>Uzbekistan</span></a>
+                <a href="georgia.html" class="country country-georgia animate-on-scroll"><span>Georgia</span></a>
+                <a href="kyrgyzstan.html" class="country country-kyrgyzstan animate-on-scroll"><span>Kyrgyzstan</span></a>
+                <a href="philippines.html" class="country country-philippines animate-on-scroll"><span>Philippines</span></a>
             </div>
         </div>
     </section>
@@ -645,7 +663,8 @@
                 'images/uzbekistan.jpg',
                 'images/georgia.jpg',
                 'images/kyrgyzstan.jpg',
-                'images/philippines.jpg'
+                'images/philippines.jpg',
+                'images/logo.png'
             ];
             imageUrls.forEach(url => {
                 const img = new Image();
