@@ -1,0 +1,4 @@
+"scripts": {
+    "build": "mkdir -p public && cp -r nioverseas public/ && cp -r videos public/ && cp gallery.html public/ && cp logo.png public/ && cp favicon.png public/ && cp sitemap.xml public/ && cp robots.txt public/ && npm run generate",
+    "start": "stackbit dev"
+}
