@@ -1,73 +1,298 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://nioverseas.in/</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/aboutus.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/university.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/countries.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/gallery.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/contactus.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/applynow.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/privacy.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/russia.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/kazakhstan.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/uzbekistan.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/georgia.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/kyrgyzstan.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nioverseas.in/philippines.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>0.7</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://nioverseas.in/</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/aboutus.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/university.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/countries.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/gallery.html</loc>
+        <lastmod>2025-04-18</lastmod>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/1.jpg</image:loc>
+            <image:title>Students at NI Overseas Consultancy event</image:title>
+            <image:caption>Students participating in an event organized by NI Overseas Consultancy</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/200.jpg</image:loc>
+            <image:title>Medical university campus abroad</image:title>
+            <image:caption>A scenic view of a medical university campus abroad</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/2.jpg</image:loc>
+            <image:title>Study abroad consultation session</image:title>
+            <image:caption>Consultation session for students aspiring to study abroad</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/4.jpg</image:loc>
+            <image:title>International student orientation</image:title>
+            <image:caption>Orientation program for international students at a university</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/5.jpg</image:loc>
+            <image:title>MBBS students in classroom</image:title>
+            <image:caption>MBBS students attending a lecture in a classroom</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/6.jpg</image:loc>
+            <image:title>Cultural event for overseas students</image:title>
+            <image:caption>Cultural event celebrating diversity among overseas students</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/7.jpg</image:loc>
+            <image:title>University library abroad</image:title>
+            <image:caption>Students studying in a university library abroad</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/8.jpg</image:loc>
+            <image:title>Student dormitory tour</image:title>
+            <image:caption>Tour of student dormitories at a medical university</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/9.jpg</image:loc>
+            <image:title>Graduation ceremony for MBBS students</image:title>
+            <image:caption>MBBS students celebrating their graduation ceremony</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/10.jpg</image:loc>
+            <image:title>Medical lab practical session</image:title>
+            <image:caption>Students conducting experiments in a medical lab</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/11.jpg</image:loc>
+            <image:title>Students exploring campus</image:title>
+            <image:caption>International students exploring their university campus</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/12.jpg</image:loc>
+            <image:title>NI Overseas team with students</image:title>
+            <image:caption>NI Overseas team interacting with students</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/13.jpg</image:loc>
+            <image:title>International student festival</image:title>
+            <image:caption>Festival celebrating international student culture</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/14.jpg</image:loc>
+            <image:title>Medical university lecture hall</image:title>
+            <image:caption>Lecture hall at a medical university abroad</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/15.jpg</image:loc>
+            <image:title>Students at university cafeteria</image:title>
+            <image:caption>Students dining at the university cafeteria</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/16.jpg</image:loc>
+            <image:title>Study abroad seminar</image:title>
+            <image:caption>Seminar on study abroad opportunities by NI Overseas</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/17.jpg</image:loc>
+            <image:title>Campus sports event</image:title>
+            <image:caption>Students participating in a campus sports event</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/18.jpg</image:loc>
+            <image:title>Student visa consultation</image:title>
+            <image:caption>Visa consultation session for study abroad students</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/19.jpg</image:loc>
+            <image:title>Medical students in lab coats</image:title>
+            <image:caption>Medical students in lab coats during practical training</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/20.jpg</image:loc>
+            <image:title>University campus scenery</image:title>
+            <image:caption>Beautiful scenery of a university campus abroad</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/21.jpg</image:loc>
+            <image:title>NI Overseas office in Nagpur</image:title>
+            <image:caption>NI Overseas Consultancy office in Nagpur, India</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/22.jpg</image:loc>
+            <image:title>Students at international airport</image:title>
+            <image:caption>Students arriving at an international airport for studies</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/23.jpg</image:loc>
+            <image:title>Medical university entrance</image:title>
+            <image:caption>Main entrance of a medical university abroad</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/24.jpg</image:loc>
+            <image:title>Cultural exchange program</image:title>
+            <image:caption>Cultural exchange program for international students</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/25.jpg</image:loc>
+            <image:title>Student accommodation abroad</image:title>
+            <image:caption>Student accommodation facilities at a university</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/26.jpg</image:loc>
+            <image:title>MBBS admission counseling</image:title>
+            <image:caption>Counseling session for MBBS admission abroad</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/27.jpg</image:loc>
+            <image:title>University research lab</image:title>
+            <image:caption>Research lab at a medical university</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/28.jpg</image:loc>
+            <image:title>Students at career fair</image:title>
+            <image:caption>Students attending a career fair at a university</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/29.jpg</image:loc>
+            <image:title>International student group photo</image:title>
+            <image:caption>Group photo of international students at a university</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/30.jpg</image:loc>
+            <image:title>Medical university hospital</image:title>
+            <image:caption>Hospital affiliated with a medical university</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/31.jpg</image:loc>
+            <image:title>Student life abroad</image:title>
+            <image:caption>Daily life of students studying abroad</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/32.jpg</image:loc>
+            <image:title>NI Overseas workshop</image:title>
+            <image:caption>Workshop organized by NI Overseas Consultancy</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/33.jpg</image:loc>
+            <image:title>Campus recreational area</image:title>
+            <image:caption>Recreational area on a university campus</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/34.jpg</image:loc>
+            <image:title>Medical students in training</image:title>
+            <image:caption>Medical students undergoing practical training</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/35.jpg</image:loc>
+            <image:title>University open day</image:title>
+            <image:caption>Open day event at a medical university</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/36.jpg</image:loc>
+            <image:title>Students in study group</image:title>
+            <image:caption>Students collaborating in a study group</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/37.jpg</image:loc>
+            <image:title>International education expo</image:title>
+            <image:caption>NI Overseas at an international education expo</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/38.jpg</image:loc>
+            <image:title>Medical university auditorium</image:title>
+            <image:caption>Auditorium at a medical university</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/39.jpg</image:loc>
+            <image:title>Student success celebration</image:title>
+            <image:caption>Celebration of student achievements abroad</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/40.jpg</image:loc>
+            <image:title>Campus cultural festival</image:title>
+            <image:caption>Cultural festival on a university campus</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/41.jpg</image:loc>
+            <image:title>Medical students in practical exam</image:title>
+            <image:caption>Medical students during a practical examination</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/42.jpg</image:loc>
+            <image:title>University campus at night</image:title>
+            <image:caption>University campus illuminated at night</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/43.jpg</image:loc>
+            <image:title>NI Overseas team meeting</image:title>
+            <image:caption>NI Overseas team in a planning meeting</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/44.jpg</image:loc>
+            <image:title>Students at university fair</image:title>
+            <image:caption>Students exploring a university fair</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://nioverseas.in/nioverseas/45.jpg</image:loc>
+            <image:title>International student welcome event</image:title>
+            <image:caption>Welcome event for international students at a university</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/contactus.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/applynow.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/privacy.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/russia.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/kazakhstan.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/uzbekistan.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/georgia.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/kyrgyzstan.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nioverseas.in/philippines.html</loc>
+        <lastmod>2025-04-16</lastmod>
+        <priority>0.7</priority>
+    </url>
 </urlset>
